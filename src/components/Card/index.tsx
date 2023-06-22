@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { FC } from 'react'
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-	title: string
+	title?: string
 }
 
 const Card: FC<CardProps> = ({ className, title, children, ...props }) => {

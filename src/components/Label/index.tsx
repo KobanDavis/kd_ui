@@ -16,7 +16,11 @@ const styles = {
 const Label: FC<LabelProps> = ({ className, type, ...props }) => {
 	return (
 		<div
-			className={clsx(className, styles[type ?? 'DEFAULT'], 'text-xs rounded-sm py-0.5 px-1.5 uppercase w-min font-normal backdrop-blur-lg')}
+			className={clsx(
+				className,
+				styles[type ?? 'DEFAULT'],
+				'text-xs rounded-sm py-0.5 px-1.5 uppercase w-fit h-min font-normal backdrop-blur-lg'
+			)}
 			{...props}
 		/>
 	)
