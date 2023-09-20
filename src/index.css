@@ -15,3 +15,28 @@ input[type='color']::-webkit-color-swatch-wrapper {
 input[type='color']::-webkit-color-swatch {
 	border: none;
 }
+
+::-webkit-scrollbar {
+	@apply cursor-pointer;
+	@apply w-4;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-theme-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-clip-padding bg-theme-primary rounded-full border-solid border-[6px] border-transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-theme-primary-light;
+}
+
+::-webkit-scrollbar-thumb:active {
+	@apply bg-theme-primary-lighter;
+}
+
+::-webkit-scrollbar-corner {
+	@apply bg-theme-secondary;
+}

@@ -7,14 +7,14 @@ import clsx from 'clsx'
 const App: FC = () => {
 	const { setThemeColor, theme } = useTheme()
 	return (
-		<div className='text-sm bg-theme-secondary text-theme-primary flex flex-col w-screen min-h-screen'>
-			<Card className='m-4 max-w-lg w-full self-center flex'>
+		<div className='p-4 text-sm bg-theme-secondary text-theme-primary flex flex-col w-screen min-h-screen'>
+			<Card className='max-w-lg w-full self-center flex'>
 				<div className='flex justify-between items-center'>
 					<span className='flex items-center text-2xl'>
 						KD_UI <CubeTransparentIcon className='h-6 w-6 ml-1' />
 					</span>
 					<div className='flex space-x-2'>
-						<Label type='primary' className='flex items-center'>
+						<Button type='primary' className='flex items-center'>
 							<span>Primary</span>
 							<EyeDropperIcon className='w-3 h-3 ml-1' />
 							<input
@@ -23,8 +23,8 @@ const App: FC = () => {
 								value={theme.primary}
 								onChange={(e) => setThemeColor('primary', e.target.value)}
 							/>
-						</Label>
-						<Label type='secondary' className='flex items-center'>
+						</Button>
+						<Button type='secondary' className='flex items-center'>
 							<span>Secondary</span>
 							<EyeDropperIcon className='w-3 h-3 ml-1' />
 							<input
@@ -33,11 +33,11 @@ const App: FC = () => {
 								value={theme.secondary}
 								onChange={(e) => setThemeColor('secondary', e.target.value)}
 							/>
-						</Label>
+						</Button>
 					</div>
 				</div>
 			</Card>
-			<div className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,1fr))] gap-4 w-full p-4'>
+			<div className='grid grid-cols-[repeat(auto-fill,_minmax(20rem,1fr))] gap-4 w-full mt-4'>
 				<Card title='Button'>
 					<div className='flex space-x-2 mb-2'>
 						<Button>Default</Button>
@@ -57,7 +57,9 @@ const App: FC = () => {
 					</div>
 				</Card>
 				<Card title='Link'>
-					<Link>Link</Link>
+					<span>
+						This is a <Link>link</Link> inside a sentence
+					</span>
 				</Card>
 				<Card title='Label'>
 					<div className='flex space-x-2 mb-2'>

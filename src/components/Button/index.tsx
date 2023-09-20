@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { borderActive, backgroundSecondaryActive, backgroundPrimaryActive } from 'lib'
+import { borderActive, backgroundSecondaryActive, backgroundPrimaryActive } from '../../lib'
 import { FC } from 'react'
-import { ThemeType } from 'types'
+import { ThemeType } from '../../types'
 
 interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
 	type?: ThemeType
@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = ({ className, type, icon, ...props }) => {
 				className,
 				icon ? styles.icon : 'px-4 py-1.5 rounded-sm',
 				styles[type ?? 'DEFAULT'],
-				'text-xs backdrop-blur-lg uppercase transition-colors'
+				'font-semibold text-xs backdrop-blur-lg uppercase transition-colors'
 			)}
 			{...props}
 		/>

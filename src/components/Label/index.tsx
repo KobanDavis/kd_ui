@@ -19,7 +19,7 @@ const Label: FC<LabelProps> = ({ className, type, ...props }) => {
 			className={clsx(
 				className,
 				styles[type ?? 'DEFAULT'],
-				'text-xs rounded-sm py-0.5 px-1.5 uppercase w-fit h-min font-normal backdrop-blur-lg'
+				'font-semibold text-xs rounded-sm py-0.5 px-1.5 uppercase w-fit h-min backdrop-blur-lg'
 			)}
 			{...props}
 		/>
