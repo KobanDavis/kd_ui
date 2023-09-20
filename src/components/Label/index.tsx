@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { backgroundPrimaryBase, backgroundSecondaryBase, borderBase } from 'lib'
+import { backgroundPrimaryBase, backgroundSecondaryBase, borderBase } from '../../lib/styles'
 import { FC } from 'react'
-import { ThemeType } from 'types'
+import { ThemeType } from '../../types'
 
 interface LabelProps extends React.HTMLAttributes<HTMLDivElement> {
 	type?: ThemeType

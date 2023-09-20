@@ -1,9 +1,10 @@
-import { Button, Card, Label, Link } from 'components'
+import { Button, Card, Label, Link } from '../dist'
 import { FC } from 'react'
 import { CogIcon, CubeTransparentIcon, EyeDropperIcon } from '@heroicons/react/24/solid'
-import { useTheme } from 'providers/theme'
-import { borderBase } from 'lib'
+import { useTheme } from './providers/theme'
+import { borderBase } from './lib/styles'
 import clsx from 'clsx'
+
 const App: FC = () => {
 	const { setThemeColor, theme } = useTheme()
 	return (

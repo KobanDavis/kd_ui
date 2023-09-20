@@ -1,10 +1,15 @@
 {
 	"name": "@kobandavis/ui",
-	"private": true,
 	"version": "0.1.0",
+	"private": true,
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"url": "https://github.com/KobanDavis/kd_ui.git"
+	},
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "rm -rf dist && tsc -p tsconfig.build.json",
 		"preview": "vite preview"
 	},
 	"eslintConfig": {
@@ -21,22 +26,22 @@
 		"useTabs": true
 	},
 	"dependencies": {
+		"color": "^4.2.3",
+		"tailwindcss": "^3.3.2"
+	},
+	"devDependencies": {
 		"@heroicons/react": "^2.0.18",
 		"@types/color": "^3.0.3",
 		"@types/react": "^18.2.6",
 		"@types/react-dom": "^18.2.4",
-		"clsx": "^1.2.1",
-		"color": "^4.2.3",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
 		"@vitejs/plugin-react": "^4.0.0",
 		"autoprefixer": "^10.4.14",
+		"clsx": "^1.2.1",
 		"eslint": "^8.40.0",
 		"eslint-config-react-app": "^7.0.1",
 		"postcss": "^8.4.23",
-		"tailwindcss": "^3.3.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.5",
 		"vite-plugin-eslint": "^1.8.1",

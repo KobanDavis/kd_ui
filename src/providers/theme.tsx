@@ -1,7 +1,7 @@
 import color from 'color'
-import { useState, useContext, createContext, useLayoutEffect } from 'react'
+import { useState, useContext, createContext, useEffect } from 'react'
 import type { FC, ReactNode } from 'react'
-import { ThemeType } from 'types'
+import { ThemeType } from '../types'
 
 interface ThemeProviderProps {
 	children: ReactNode
@@ -13,29 +13,24 @@ interface ThemeContext {
 	theme: Record<ThemeType, string>
 }
 
-type VariableKey = '--theme-primary' | '--theme-primary-light' | '--theme-primary-lighter' | '--theme-secondary'
-
-type VariableMap = Record<VariableKey, string>
-
 const ThemeProvider: FC<ThemeProviderProps> = ({ initialTheme, children, ...props }) => {
 	const [theme, setTheme] = useState<ThemeContext['theme']>(
 		initialTheme ?? {
-			primary: '#dac5a7',
-			// secondary: '#0e0e0e'
-			secondary: '#021227'
+			primary: '#000000',
+			secondary: '#ffffff'
 		}
 	)
 
 	const setThemeColor = (color: ThemeType, value: string) => {
 		setTheme((old) => {
-			const theme = { ...old }
+			const theme = structuredClone(old)
 			theme[color] = value
 			return theme
 		})
 	}
 
-	useLayoutEffect(() => {
-		const variables: VariableMap = {
+	useEffect(() => {
+		const variables = {
 			'--theme-primary': color(theme.primary).rgb().array().join(' '),
 			'--theme-primary-light': color(theme.primary).lighten(0.05).string(),
 			'--theme-primary-lighter': color(theme.primary).lighten(0.1).string(),
@@ -51,7 +46,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ initialTheme, children, ...prop
 
 	return (
 		<Context.Provider value={{ theme, setThemeColor }} {...props}>
-			<div className='selection:bg-theme-primary selection:text-theme-secondary'>{children}</div>
+			{children}
 		</Context.Provider>
 	)
 }
